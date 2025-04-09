@@ -8,7 +8,7 @@ const nextConfig = {
         ...config.resolve.fallback,
         fs: false,
         readline: false,
-        child_process: false, // Adicionado por precaução para o spawn do QR
+        child_process: false, // Precaução para o spawn do QR
       };
     }
     return config;
