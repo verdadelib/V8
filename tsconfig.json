@@ -1,38 +1,32 @@
-// tsconfig.json (CORRIGIDO)
+// tsconfig.json
 {
   "compilerOptions": {
-    // Mantém opções importantes do Next.js
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false, // MUDADO para false (como sugerido pelo Next, mas pode voltar para true depois)
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler", // <-- Use 'bundler' (mais moderno que 'node')
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [{ "name": "next" }], // Necessário para App Router (bom ter mesmo com Pages Router)
-
-    // --- Configuração de Alias CORRIGIDA ---
-    "baseUrl": ".", // Raiz do projeto é a base
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
       "@/styles/*": ["styles/*"],
       "@/pages/*": ["pages/*"],
       "@/entities/*": ["entities/*"],
-      "@/hooks/*": ["hooks/*"], // Adicione se tiver
-      // Adicione outros diretórios que você usa com @/
-      "@/*": ["./*"] // Alias genérico para a raiz (útil se importar algo da raiz)
+      "@/hooks/*": ["hooks/*"],
+      "@/*": ["./*"]
     }
-    // ----------------------------------------
-
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"], // Padrão recomendado
-  "exclude": ["node_modules", "auth_info"] // Exclui node_modules e auth_info
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", "auth_info"]
 }
